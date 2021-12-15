@@ -1,0 +1,284 @@
+<h1 style="text-align: center;">this is my first angular app </h1>
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- three ways to use selector -->
+
+<!-- <app-test></app-test> -->
+<!-- <div class="app-test"></div> -->
+
+<!-- <div app-test></div> -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+
+<hr>
+<!-- class binding -->
+
+
+ <h1 style="text-align: center;">class binding</h1> 
+
+<div [class]="mycls"></div>
+
+
+<p [class]="myclss"> this is clsass binding</p>
+<hr>
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- syle buinding -->
+
+<div class="style binding">
+<h1 style="text-align: center;">style binding</h1>
+
+<h1 [style.color]=" 'red' ">This is style buinging </h1>
+
+<h1 [style.background-color]=" 'red' ">This is style buinging </h1>
+
+
+<h1 [style.font-size]=" '100px' ">This is style buinging </h1>
+</div> 
+<!-- this way to we have to witer style binding -->
+
+
+
+
+
+
+<hr>
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+ <!-- interpolation in angular -->
+
+ <h1 style="text-align: center;">Interpolation</h1>
+
+<h1>{{interpolation}}</h1>
+
+<img src="{{url}}" alt="">
+
+<p>{{show()}}</p>
+
+
+<hr>
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<!-- property binding  -->
+<h1 style="text-align: center;"> property binding</h1>
+
+
+<input [value]="propertybinding"/>
+<br>
+<br>
+
+<img [src]="img" alt="">
+
+
+
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
+<!-- attribue binding -->
+<!-- <table border="2">
+<tr>
+  <td [attr.colspan]="2">head</td>
+</tr>
+<tr>
+  <td>body1</td>
+  <td>body2</td>
+</tr>
+</table>
+
+<button [attr.aria-label]="btn">pay</button> -->
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<!-- event binding -->
+<br>
+<hr>
+<h1 style="text-align: center;">Event binding</h1>
+
+<input (keyup.enter)="handleEvent($event)">
+
+<button (click)="str"> event-binding</button>
+
+<p>{{str}}</p>
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------- -->
+
+<select (change)="handle($event)">
+  <option value="sai">sai</option>
+  <option value="this">this</option>
+  <option value="that">that</option>
+</select>
+<br>
+<br>
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<hr>
+                            <!-- practices 1 -->
+
+ <h1 style="text-align: center;">practices-1</h1>
+
+
+<input type="text" (keyup)="settextsize($event)">
+
+<p> Font size:{{textsize}}px</p>
+
+
+<button (click)="setSize('dec')">-</button>
+<button (click)="setSize('inc')">+</button>
+
+<p [style.fontSize.px]="textsize"> {{text}}</p> 
+
+<hr>
+
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+ <!-- <select name="" id="">
+  <option value="red">red</option>
+  <option value="blue">blue</option>
+
+  <option value="green">green</option>
+
+  <option value="yellow">yellow</option>
+
+</select>
+
+<p [style.fontSize.px]="textsize"> {{text}}</p>  -->
+
+
+<!---------------------------------------------------------------------------------------------------------------------->
+<h2 style="text-align: center;">Two-way Binding Example</h2>    
+
+<input [(ngModel)]="fullName" /> <br/><br/>  
+
+<p> {{fullName}} </p>  
+<hr>
+<!---------------------------------------------------------------------------------------------------------------------->
+<h2 style="text-align: center;"> template reference varable</h2>    
+
+<input #info type="text" >
+
+<button (click)=getinfo(info.value)>Get info</button>
+<p>{{sdfds}}</p>
+
+<hr>
+<!---------------------------------------------------------------------------------------------------------------------->
+ <h1 style="text-align: center;"> pipes in angular</h1>
+
+<h1>{{pipe | titlecase }}</h1>
+<!-- lowercase ,uppercase -->
+
+<h1>{{ date | date:'short'}}</h1>
+
+<h1>{{amount | currency:'INR'}}</h1>
+
+<hr>
+<!-- --------------------------------------------------------------------------------------------------- -->
+                            <h1>Diaractive in angular </h1>
+
+<h2 style="text-align: center;">2.Structural directives</h2>
+<h2 style="text-align: center;">Ng If</h2>
+
+<select (change)="changeEvent($event)">
+  <option value="html">html</option>
+  <option value="css">css</option>
+  <option value="javascript">javascript</option>
+  <option value="angulr">angulr</option>
+</select>
+
+<h1 *ngIf="selectskill">select your skill:{{selectskill}}</h1>
+
+<!-- another EXAMPLE OF Ngif  -->
+
+<div *ngIf="!isdataArrive">
+  <h1>loading.....</h1>
+</div>
+
+<section *ngIf="isdataArrive"> <h1> your data {{ data123}}</h1></section>
+<hr>
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<h1 style="text-align: center;">ngfor</h1>
+
+
+<ul>
+  <li *ngFor=" let name of names">
+    {{name}}
+  </li>
+</ul>
+
+<hr>
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<section>
+  <div *ngFor="let user of users; let i =index">
+    <p>Sr.no{{i+1}}</p>
+    <p>{{user.name}}</p>
+    <p>{{user.skill}}</p>
+    <p>{{user.email}}</p>
+    <a [href]="user.website">website Link</a>
+    <hr>
+
+
+  </div>
+</section>
+
+
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<input type="text" #idqwe>
+
+<button (click)="getinfo(idqwe.value)">info</button>
+
+<p>{{sdfds}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
